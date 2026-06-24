@@ -249,6 +249,10 @@ Use MicroSIP (Windows) or any SIP-compatible softphone. Register two accounts us
 
 Developed with ❤️ by Over0010
 
+## 📄 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
 
 
 
