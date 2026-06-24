@@ -247,7 +247,7 @@ Use MicroSIP (Windows) or any SIP-compatible softphone. Register two accounts us
 
 ## 💡 Credits
 
-Developed with ❤️ by [Your Name] (aka [Your Username])
+Developed with ❤️ by Over
 
 
 
