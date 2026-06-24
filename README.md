@@ -2,7 +2,7 @@ Setting Up a VoIP PBX with Asterisk on Ubuntu
 ========================
 ## Prerequisites
 
-- Ubuntu 22.04 (or 20.04) (physical machine, VM, or WSL2)
+- Ubuntu 22.04 (or 20.04), physical machine, VM, or WSL2
 - Basic Linux command-line knowledge (editing files with `vim` or `nano`, running `sudo`)
 - At least 1 GB RAM and 10 GB disk space
 - Two softphone clients (e.g. [MicroSIP](https://www.microsip.org/) on Windows)
@@ -245,7 +245,9 @@ Use MicroSIP (Windows) or any SIP-compatible softphone. Register two accounts us
 | 7 | Opened firewall ports for SIP and RTP |
 | 8 | Registered softphones and tested calls |
 
+## 💡 Credits
 
+Developed with ❤️ by [Your Name] (aka [Your Username])
 
 
 
