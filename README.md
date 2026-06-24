@@ -254,7 +254,7 @@ You should see **no output** , meaning `chan_sip` is fully disabled and PJSIP is
  
 ### One-Way Audio (you can hear them but they can't hear you, or vice versa)
  
-**Cause:** NAT or RTP port range issue — the server sends audio to the wrong IP or the firewall blocks RTP.
+**Cause:** NAT or RTP port range issue, the server sends audio to the wrong IP or the firewall blocks RTP.
  
 **Fix:**
 - Make sure ports `10000–20000/udp` are open (Step 7)
