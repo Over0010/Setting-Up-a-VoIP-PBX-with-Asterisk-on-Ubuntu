@@ -205,7 +205,41 @@ Use MicroSIP (Windows) or any SIP-compatible softphone. Register two accounts us
 - From either extension, dial `600` to hear the test audio
 
 ## Troubleshooting
+
+### Error: `Wrong password` — Registration fails even with correct credentials
  
+**Error message in Asterisk logs:**
+ 
+```
+NOTICE[7134]: chan_sip.c:29060 handle_request_register:
+Registration from '<sip:101@10.0.7.27>' failed for '10.0.7.119:52677' - Wrong password
+```
+ 
+**Cause:** Asterisk is using the legacy `chan_sip` module instead of PJSIP to handle registrations. Since `chan_sip` and PJSIP use separate account databases, `chan_sip` cannot find the credentials defined in `pjsip.conf` and rejects the registration as a wrong password, even though the password is correct.
+ 
+**Fix:** Disable `chan_sip` by adding `noload => chan_sip.so` to `/etc/asterisk/modules.conf`:
+ 
+```bash
+sudo vim /etc/asterisk/modules.conf
+```
+ 
+Add this line at the bottom of the `[modules]` section:
+ 
+```ini
+[modules]
+; ... existing content ...
+noload => chan_sip.so
+```
+ 
+Then restart Asterisk and verify the module is no longer loaded:
+ 
+```bash
+sudo systemctl restart asterisk
+sudo asterisk -rx "module show like chan_sip"
+```
+ 
+You should see **no output** , meaning `chan_sip` is fully disabled and PJSIP is now handling all registrations.
+
 ### Error: Extension shows "Unavailable" in `pjsip show endpoints`
  
 > ![qownnotes-media-nqWhCs](media/pjsip-endpoint-unavailable.png)
